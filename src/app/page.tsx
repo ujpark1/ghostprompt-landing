@@ -568,7 +568,7 @@ function FAQ() {
                   aria-expanded={openIndex === i}
                   aria-controls={`faq-answer-${i}`}
                 >
-                  <span className="text-sm font-medium text-zinc-900 pr-4">{faq.q}</span>
+                  <span className="text-base font-medium text-zinc-900 pr-4">{faq.q}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-zinc-400 flex-shrink-0 transition-transform ${
                       openIndex === i ? "rotate-180" : ""
@@ -579,7 +579,7 @@ function FAQ() {
               </h3>
               {openIndex === i && (
                 <div id={`faq-answer-${i}`} className="px-5 pb-5" role="region" aria-labelledby={`faq-q-${i}`}>
-                  <p className="text-sm text-zinc-500 leading-relaxed">{faq.a}</p>
+                  <p className="text-base text-zinc-500 leading-relaxed">{faq.a}</p>
                 </div>
               )}
             </div>
