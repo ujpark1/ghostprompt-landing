@@ -20,6 +20,12 @@ import {
   X,
   ShieldCheck,
   Mail,
+  AlertTriangle,
+  Video,
+  Presentation,
+  BookOpen,
+  Clock,
+  Image as ImageIcon,
 } from "lucide-react";
 
 // ─── Header ─────────────────────────────────────────────────────────────────
@@ -40,6 +46,7 @@ function Header() {
           <a href="#compatibility" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Compatibility</a>
           <a href="#pricing" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Pricing</a>
           <a href="#faq" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">FAQ</a>
+          <a href="#blog" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Blog</a>
         </div>
 
         <div className="hidden md:flex items-center gap-3">
@@ -69,6 +76,7 @@ function Header() {
             <a href="#compatibility" className="text-sm text-zinc-500 hover:text-zinc-900" onClick={() => setMenuOpen(false)}>Compatibility</a>
             <a href="#pricing" className="text-sm text-zinc-500 hover:text-zinc-900" onClick={() => setMenuOpen(false)}>Pricing</a>
             <a href="#faq" className="text-sm text-zinc-500 hover:text-zinc-900" onClick={() => setMenuOpen(false)}>FAQ</a>
+            <a href="#blog" className="text-sm text-zinc-500 hover:text-zinc-900" onClick={() => setMenuOpen(false)}>Blog</a>
             <a href="#pricing" className="px-5 py-2 rounded-full bg-purple-600 text-white text-sm font-medium text-center" onClick={() => setMenuOpen(false)}>
               Get GhostPrompt — $24.99
             </a>
@@ -184,42 +192,130 @@ function Hero() {
   );
 }
 
-// ─── Use Cases ───────────────────────────────────────────────────────────────
-function UseCases() {
-  const cases = [
-    {
-      title: "Teleprompter for Zoom Presentations",
-      description: "Deliver polished presentations on Zoom without memorizing scripts. GhostPrompt overlays your talking points invisibly — your audience only sees your slides and shared screen.",
-    },
-    {
-      title: "Invisible Teleprompter for Online Teaching",
-      description: "Teachers and instructors can read lesson plans naturally during live classes on Google Meet, Teams, or Zoom without students seeing the script overlay.",
-    },
-    {
-      title: "Script Reader for Content Creators",
-      description: "Record tutorials, walkthroughs, and demos with a teleprompter that stays hidden from screen recordings on OBS, Loom, and QuickTime.",
-    },
-  ];
-
+// ─── Problem Section ─────────────────────────────────────────────────────────
+function ProblemSection() {
   return (
-    <section className="py-24 px-6 bg-zinc-50" aria-labelledby="use-cases-heading">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-24 px-6 bg-zinc-50" aria-labelledby="problem-heading">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 id="use-cases-heading" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-            Built for how you actually present
+          <h2 id="problem-heading" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+            This keeps happening.
           </h2>
-          <p className="text-zinc-500 text-lg max-w-2xl mx-auto">
-            Whether you&apos;re on a Zoom call, teaching a class, or recording content — GhostPrompt keeps your script hidden.
+          <p className="text-xl text-zinc-500">
+            And every time, it costs you more than you realize.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {cases.map((c) => (
-            <article key={c.title} className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-zinc-900 mb-3">{c.title}</h3>
-              <p className="text-zinc-500 text-sm leading-relaxed">{c.description}</p>
-            </article>
-          ))}
+        {/* Scenario 1: Presenter */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 rounded-xl bg-red-50 border border-red-200">
+              <Presentation className="w-5 h-5 text-red-500" />
+            </div>
+            <h3 className="text-xl font-semibold text-zinc-900">The Presenter&apos;s Nightmare</h3>
+          </div>
+
+          <div className="space-y-6 text-lg leading-relaxed text-zinc-600">
+            <p>
+              You prepared for hours. You know <em>exactly</em> what to say. Then the Zoom call starts, the screen share goes live, and...
+            </p>
+            <p className="text-zinc-900 font-semibold text-xl">
+              Your mind goes completely blank.
+            </p>
+            <p>
+              You glance at your notes. Just for a second. But your eyes dart away from the camera.
+              <strong className="text-zinc-800"> Everyone notices.</strong> You look unprepared. Unprofessional.
+            </p>
+            <div className="bg-red-50 border border-red-200 rounded-xl p-5">
+              <p className="text-red-700 font-medium">
+                Or even worse — you read directly from your screen. The scanning eyes. The unnatural pauses. The robotic delivery.
+              </p>
+              <p className="text-red-600 mt-2 font-semibold">
+                &ldquo;Were they reading from a script?&rdquo;
+              </p>
+              <p className="text-red-700 mt-2">
+                The moment they think that, your credibility is gone. The deal. The promotion. The opportunity. <strong>Gone.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Scenario 2: Content Creator */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 rounded-xl bg-orange-50 border border-orange-200">
+              <Video className="w-5 h-5 text-orange-500" />
+            </div>
+            <h3 className="text-xl font-semibold text-zinc-900">The Creator&apos;s Dilemma</h3>
+          </div>
+
+          <div className="space-y-6 text-lg leading-relaxed text-zinc-600">
+            <p>
+              You&apos;re recording a tutorial. Screen sharing your code, your design, your workflow. The content is great. But you need to <em>talk</em> while you do it.
+            </p>
+            <p>
+              Your script is on your phone, propped up next to the monitor. You keep glancing sideways. Your eyes leave the camera every 10 seconds.
+              <strong className="text-zinc-800"> The viewer can tell you&apos;re reading something off-screen.</strong>
+            </p>
+            <p>
+              You try putting notes on screen — but you&apos;re sharing your screen. <strong className="text-zinc-800">They can see everything.</strong>
+            </p>
+            <div className="bg-orange-50 border border-orange-200 rounded-xl p-5">
+              <p className="text-orange-700 font-medium">
+                You&apos;re stuck choosing between sounding polished and looking natural. You can&apos;t have both.
+              </p>
+              <p className="text-orange-600 mt-2 font-semibold">
+                Until now.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* The Solution Bridge */}
+        <div className="text-center bg-white border border-purple-200 rounded-2xl p-8 shadow-sm">
+          <p className="text-zinc-500 text-base mb-3">Here&apos;s the thing:</p>
+          <p className="text-xl md:text-2xl font-bold text-zinc-900 mb-4">
+            The best presenters don&apos;t wing it. They have a secret weapon.
+          </p>
+          <p className="text-lg text-zinc-600 mb-6">
+            A teleprompter that&apos;s <strong className="text-purple-600">completely invisible</strong> during screen sharing. One that lets them read every word while looking straight into the camera.
+          </p>
+          <p className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            Now it&apos;s your turn.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── App Screenshot ──────────────────────────────────────────────────────────
+function AppScreenshot() {
+  return (
+    <section className="py-24 px-6" aria-labelledby="screenshot-heading">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 id="screenshot-heading" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+          Clean, Simple, Powerful
+        </h2>
+        <p className="text-zinc-500 text-lg mb-12 max-w-2xl mx-auto">
+          A distraction-free editor with built-in script management. Write your script, click Start, and present like a pro.
+        </p>
+
+        {/* Screenshot placeholder */}
+        <div className="rounded-2xl border border-zinc-200 bg-zinc-100 overflow-hidden shadow-lg">
+          <div className="flex items-center gap-2 px-4 py-3 bg-zinc-200/60 border-b border-zinc-200">
+            <div className="w-3 h-3 rounded-full bg-red-400" />
+            <div className="w-3 h-3 rounded-full bg-yellow-400" />
+            <div className="w-3 h-3 rounded-full bg-green-400" />
+            <span className="ml-2 text-xs text-zinc-400">GhostPrompt</span>
+          </div>
+          {/* Replace this div with an actual <img> tag when screenshot is ready */}
+          <div className="aspect-[16/10] flex items-center justify-center bg-zinc-50">
+            <div className="text-center">
+              <ImageIcon className="w-16 h-16 text-zinc-300 mx-auto mb-4" />
+              <p className="text-zinc-400 text-sm">App screenshot coming soon</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -590,6 +686,70 @@ function FAQ() {
   );
 }
 
+// ─── Blog ────────────────────────────────────────────────────────────────────
+const blogPosts = [
+  {
+    title: "Why Every Presenter Needs an Invisible Teleprompter in 2026",
+    excerpt: "Screen sharing changed how we present. But it also killed the teleprompter. Until macOS introduced screen-capture exclusion...",
+    category: "Guide",
+    date: "Apr 2026",
+    slug: "/blog/invisible-teleprompter-guide",
+  },
+  {
+    title: "5 Tips for Natural Delivery While Reading a Script on Zoom",
+    excerpt: "Looking natural while reading a script is an art. Here are five techniques that professional speakers use to sound conversational...",
+    category: "Tips",
+    date: "Apr 2026",
+    slug: "/blog/natural-delivery-tips-zoom",
+  },
+  {
+    title: "How Content Creators Use GhostPrompt for Screen Recording",
+    excerpt: "Recording tutorials with a teleprompter used to mean awkward side-glances. Here's how creators are using invisible overlays...",
+    category: "Use Case",
+    date: "Apr 2026",
+    slug: "/blog/content-creators-screen-recording",
+  },
+];
+
+function Blog() {
+  return (
+    <section id="blog" className="py-24 px-6" aria-labelledby="blog-heading">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 id="blog-heading" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+            From the Blog
+          </h2>
+          <p className="text-zinc-500 text-lg">
+            Tips, guides, and stories about presenting better with an invisible teleprompter.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {blogPosts.map((post) => (
+            <article key={post.slug} className="rounded-2xl border border-zinc-200 bg-white overflow-hidden hover:shadow-md transition-shadow">
+              {/* Blog post image placeholder */}
+              <div className="aspect-[16/9] bg-zinc-100 flex items-center justify-center border-b border-zinc-200">
+                <BookOpen className="w-8 h-8 text-zinc-300" />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded-full">{post.category}</span>
+                  <span className="text-xs text-zinc-400">{post.date}</span>
+                </div>
+                <h3 className="text-base font-semibold text-zinc-900 mb-2 leading-snug">{post.title}</h3>
+                <p className="text-sm text-zinc-500 leading-relaxed mb-4">{post.excerpt}</p>
+                <span className="text-sm font-medium text-purple-600 flex items-center gap-1">
+                  Read more <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── CTA Banner ──────────────────────────────────────────────────────────────
 function CTABanner() {
   return (
@@ -646,6 +806,7 @@ function Footer() {
             <h4 className="text-xs font-semibold text-zinc-700 uppercase tracking-wider mb-3">Resources</h4>
             <nav className="space-y-2" aria-label="Resource links">
               <a href="#faq" className="block text-sm text-zinc-400 hover:text-zinc-700 transition-colors">FAQ</a>
+              <a href="#blog" className="block text-sm text-zinc-400 hover:text-zinc-700 transition-colors">Blog</a>
               <a href="mailto:support@ghostprompt.app" className="block text-sm text-zinc-400 hover:text-zinc-700 transition-colors">Support</a>
             </nav>
           </div>
@@ -680,12 +841,14 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <UseCases />
+        <ProblemSection />
+        <AppScreenshot />
         <Features />
         <HowItWorks />
         <Compatibility />
         <Pricing />
         <FAQ />
+        <Blog />
         <CTABanner />
       </main>
       <Footer />
