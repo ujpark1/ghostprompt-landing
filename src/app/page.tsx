@@ -368,10 +368,31 @@ function HowItWorks() {
 }
 
 // ─── Compatibility ───────────────────────────────────────────────────────────
+function AppIcon({ name, color, letter }: { name: string; color: string; letter: string }) {
+  return (
+    <div
+      className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
+      style={{ backgroundColor: color }}
+      aria-hidden="true"
+    >
+      {letter}
+    </div>
+  );
+}
+
 const apps = [
-  "Zoom", "Microsoft Teams", "Google Meet", "Slack Huddle",
-  "FaceTime", "Discord", "Webex", "OBS Studio",
-  "Loom", "QuickTime", "Skype", "StreamYard",
+  { name: "Zoom", color: "#0B5CFF", letter: "Z" },
+  { name: "Microsoft Teams", color: "#6264A7", letter: "T" },
+  { name: "Google Meet", color: "#00897B", letter: "M" },
+  { name: "Slack Huddle", color: "#4A154B", letter: "S" },
+  { name: "FaceTime", color: "#34C759", letter: "FT" },
+  { name: "Discord", color: "#5865F2", letter: "D" },
+  { name: "Webex", color: "#00BCF2", letter: "W" },
+  { name: "OBS Studio", color: "#302E31", letter: "OBS" },
+  { name: "Loom", color: "#625DF5", letter: "L" },
+  { name: "QuickTime", color: "#1D1D1F", letter: "QT" },
+  { name: "Skype", color: "#00AFF0", letter: "S" },
+  { name: "StreamYard", color: "#2B8FBE", letter: "SY" },
 ];
 
 function Compatibility() {
@@ -388,11 +409,11 @@ function Compatibility() {
         <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 list-none p-0">
           {apps.map((app) => (
             <li
-              key={app}
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors"
+              key={app.name}
+              className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors"
             >
-              <Check className="w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true" />
-              <span className="text-sm text-zinc-300">{app}</span>
+              <AppIcon name={app.name} color={app.color} letter={app.letter} />
+              <span className="text-sm text-zinc-300">{app.name}</span>
             </li>
           ))}
         </ul>
@@ -460,7 +481,7 @@ function Pricing() {
         {/* Trust signals */}
         <div className="mt-8 space-y-4">
           <div className="flex items-center justify-center gap-2">
-            <div className="flex -space-x-1" aria-label="5 star rating">
+            <div className="flex gap-0.5" aria-label="5 star rating">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" aria-hidden="true" />
               ))}
