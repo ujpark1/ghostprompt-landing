@@ -133,59 +133,36 @@ function Hero() {
           </a>
         </div>
 
-        {/* Visual comparison */}
-        <div className="max-w-3xl mx-auto" role="img" aria-label="Comparison showing the teleprompter overlay is visible to you but invisible during screen sharing">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* What you see */}
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-left shadow-sm">
-              <div className="flex items-center gap-2 mb-4">
-                <Eye className="w-5 h-5 text-purple-600" aria-hidden="true" />
-                <span className="text-sm font-medium text-purple-700">What you see</span>
-              </div>
-              <div className="rounded-lg bg-zinc-900 p-4">
-                <div className="flex items-center gap-2 mb-3" aria-hidden="true">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                </div>
-                <div className="space-y-2">
-                  <div className="text-center text-sm text-zinc-400 leading-relaxed opacity-60">
-                    Welcome everyone to today&apos;s quarterly review...
-                  </div>
-                  <div className="text-center text-base text-white leading-relaxed font-medium">
-                    Our revenue grew 34% this quarter, driven by
-                    strong enterprise adoption across three key segments.
-                  </div>
-                  <div className="text-center text-sm text-zinc-500 leading-relaxed opacity-40">
-                    Let me walk you through the highlights...
-                  </div>
-                </div>
-              </div>
+        {/* Demo Video */}
+        <div className="max-w-4xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden bg-zinc-900 shadow-2xl border border-zinc-200">
+            {/* macOS window chrome */}
+            <div className="flex items-center gap-2 px-4 py-3 bg-zinc-800 border-b border-zinc-700">
+              <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+              <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
+              <div className="w-3 h-3 rounded-full bg-[#28C840]" />
             </div>
-
-            {/* What they see */}
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-left shadow-sm">
-              <div className="flex items-center gap-2 mb-4">
-                <EyeOff className="w-5 h-5 text-green-600" aria-hidden="true" />
-                <span className="text-sm font-medium text-green-700">What they see</span>
-              </div>
-              <div className="rounded-lg bg-zinc-100 p-4">
-                <div className="flex items-center gap-2 mb-3" aria-hidden="true">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                </div>
-                <div className="space-y-3 py-4">
-                  <div className="h-3 bg-zinc-200 rounded w-full" />
-                  <div className="h-3 bg-zinc-200 rounded w-4/5" />
-                  <div className="h-3 bg-zinc-200 rounded w-3/5" />
-                  <div className="text-center text-xs text-zinc-400 mt-4">
-                    Your normal screen — no teleprompter visible
-                  </div>
+            {/*
+              Replace the placeholder below with your demo video:
+              <video
+                src="/demo.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            */}
+            <div className="aspect-video flex items-center justify-center bg-zinc-900 relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-purple-600/90 flex items-center justify-center cursor-pointer hover:bg-purple-500 transition-colors shadow-lg">
+                  <Play className="w-7 h-7 text-white ml-1" />
                 </div>
               </div>
+              <p className="absolute bottom-4 text-sm text-zinc-500">Demo video coming soon</p>
             </div>
           </div>
+          <p className="text-center text-sm text-zinc-400 mt-4">macOS 14+ &middot; Apple Silicon &amp; Intel</p>
         </div>
       </div>
     </section>
@@ -301,16 +278,16 @@ function AppScreenshot() {
           A distraction-free editor with built-in script management. Write your script, click Start, and present like a pro.
         </p>
 
-        {/* Screenshot placeholder */}
-        <div className="rounded-2xl border border-zinc-200 bg-zinc-100 overflow-hidden shadow-lg">
-          <div className="flex items-center gap-2 px-4 py-3 bg-zinc-200/60 border-b border-zinc-200">
-            <div className="w-3 h-3 rounded-full bg-red-400" />
-            <div className="w-3 h-3 rounded-full bg-yellow-400" />
-            <div className="w-3 h-3 rounded-full bg-green-400" />
-            <span className="ml-2 text-xs text-zinc-400">GhostPrompt</span>
-          </div>
-          {/* Replace this div with an actual <img> tag when screenshot is ready */}
-          <div className="aspect-[16/10] flex items-center justify-center bg-zinc-50">
+        {/*
+          Replace the placeholder below with your actual screenshot:
+          <img
+            src="/app-screenshot.png"
+            alt="GhostPrompt app - script editor with sidebar note manager"
+            className="w-full rounded-2xl shadow-2xl border border-zinc-200"
+          />
+        */}
+        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 overflow-hidden shadow-2xl">
+          <div className="aspect-[16/10] flex items-center justify-center">
             <div className="text-center">
               <ImageIcon className="w-16 h-16 text-zinc-300 mx-auto mb-4" />
               <p className="text-zinc-400 text-sm">App screenshot coming soon</p>
