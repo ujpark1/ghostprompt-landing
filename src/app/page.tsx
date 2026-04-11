@@ -51,10 +51,11 @@ function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#pricing"
+            href="/GhostPrompt.dmg"
             className="px-5 py-2 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium transition-colors"
+            download
           >
-            Get GhostPrompt — $24.99
+            Download Free
           </a>
         </div>
 
@@ -77,8 +78,8 @@ function Header() {
             <a href="#pricing" className="text-sm text-zinc-500 hover:text-zinc-900" onClick={() => setMenuOpen(false)}>Pricing</a>
             <a href="#faq" className="text-sm text-zinc-500 hover:text-zinc-900" onClick={() => setMenuOpen(false)}>FAQ</a>
             <a href="#blog" className="text-sm text-zinc-500 hover:text-zinc-900" onClick={() => setMenuOpen(false)}>Blog</a>
-            <a href="#pricing" className="px-5 py-2 rounded-full bg-purple-600 text-white text-sm font-medium text-center" onClick={() => setMenuOpen(false)}>
-              Get GhostPrompt — $24.99
+            <a href="/GhostPrompt.dmg" className="px-5 py-2 rounded-full bg-purple-600 text-white text-sm font-medium text-center" onClick={() => setMenuOpen(false)} download>
+              Download Free
             </a>
           </nav>
         </div>
@@ -117,12 +118,13 @@ function Hero() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <a
-            href="#pricing"
+            href="/GhostPrompt.dmg"
             className="px-8 py-3.5 rounded-full bg-purple-600 hover:bg-purple-700 text-white font-medium text-base transition-colors flex items-center gap-2"
-            aria-label="Download GhostPrompt for Mac for $24.99"
+            aria-label="Download GhostPrompt for Mac"
+            download
           >
             <Download className="w-4 h-4" aria-hidden="true" />
-            Download for Mac — $24.99
+            Download for Mac — Free
           </a>
           <a
             href="#how-it-works"
@@ -536,11 +538,12 @@ function Pricing() {
           </ul>
 
           <a
-            href="#"
+            href="/GhostPrompt.dmg"
             className="block w-full py-3.5 rounded-full bg-purple-600 hover:bg-purple-700 text-white font-medium text-base transition-colors"
             aria-label="Download GhostPrompt for Mac"
+            download
           >
-            Download for Mac
+            Download for Mac — Free
           </a>
 
           <p className="text-zinc-400 text-xs mt-4">
@@ -739,11 +742,12 @@ function CTABanner() {
           Download GhostPrompt and never worry about memorizing scripts for video calls again.
         </p>
         <a
-          href="#pricing"
+          href="/GhostPrompt.dmg"
           className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-purple-600 hover:bg-purple-700 text-white font-medium text-base transition-colors"
+          download
         >
           <Download className="w-4 h-4" aria-hidden="true" />
-          Get GhostPrompt for Mac — $24.99
+          Download GhostPrompt for Mac — Free
         </a>
       </div>
     </section>
